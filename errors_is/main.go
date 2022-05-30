@@ -17,15 +17,15 @@ func hoge() error {
 	return MyError{Message: "fuga"}
 }
 
-func main(){
+func main() {
 	err := hoge()
-	if errors.Is(err, MyError{Message: "fuga"}){
+	if errors.Is(err, MyError{Message: "fuga"}) {
 		fmt.Println("ok")
 	} else {
 		fmt.Println("ng")
 	}
 
-	if errors.As(err, &MyError{}){
+	if errors.As(err, &MyError{}) {
 		fmt.Println("ok")
 	} else {
 		fmt.Println("ng")
